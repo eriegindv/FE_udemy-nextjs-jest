@@ -8,7 +8,6 @@ it("page has correct heading and image", () => {
   const heading = screen.getByRole("heading", {
     name: "Welcome to Popular Concert Venue",
   });
-
   expect(heading).toBeInTheDocument();
 
   const image = screen.getByRole("img", {
