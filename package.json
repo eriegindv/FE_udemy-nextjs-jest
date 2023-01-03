@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "start:test": "set NODE_ENV=\"test\" && next start",
+    "db:reset": "sh ./scripts/reset-db.sh"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.6",
