@@ -14,3 +14,17 @@ it("displays correct heading when navigating to bands route", () => {
     .contains(/our illustrious performers/i)
     .should("exist");
 });
+
+it("displays correct band name for band route that existed at build time", () => {
+  cy.task("db:reset").visit("/bands/1");
+  cy.get("h2")
+    .contains(/Shamrock Pete/i)
+    .should("exist");
+});
+
+it("diplays error for band route that not existed at build time", () => {
+  cy.task("db:reset").visit("/bands/12345");
+  cy.get("h2")
+    .contains(/band not found/i)
+    .should("exist");
+});
