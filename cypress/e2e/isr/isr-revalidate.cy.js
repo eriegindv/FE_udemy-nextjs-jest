@@ -24,4 +24,7 @@ it("should load refreshed page from cache after new band is added", () => {
   cy.get("h2")
     .contains(/avalanche of cheese/i)
     .should("exist");
+
+  // reset ISR cache to initial db conditions
+  cy.resetDbAndIsrCache();
 });
