@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "jest.setup.js",
-    "cypress/e2e/routes.cy.js"
+    "cypress/e2e/**/*.cy.js"
   ],
   "exclude": ["node_modules"]
 }
