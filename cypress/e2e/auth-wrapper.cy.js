@@ -106,3 +106,13 @@ it("runs auth flow for failed login to protected user page", () => {
     .contains(/sign in/i)
     .should("not.exist");
 });
+
+it("redirects to sign-in for protected pages", () => {
+  cy.fixture("protected-pages.json").then((urls) => {
+    urls.forEach((url) => {
+      cy.visit(url);
+      cy.findByLabelText(/email address/i).should("exist");
+      cy.findByLabelText(/password/i).should("exist");
+    });
+  });
+});
