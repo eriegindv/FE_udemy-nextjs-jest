@@ -116,3 +116,23 @@ it("redirects to sign-in for protected pages", () => {
     });
   });
 });
+
+it("does not show sign-in page when already signed in", () => {
+  cy.task("db:reset").signIn(
+    Cypress.env("TEST_USER_EMAIL"),
+    Cypress.env("TEST_PASSWORD")
+  );
+
+  // access tickets page for first show
+  cy.visit("/reservations/0");
+
+  // make sure there's no sign-in page
+  cy.get("h2")
+    .contains(/sign in to your account/i)
+    .should("not.exist");
+
+  // make surea ticket purchase button shows
+  cy.get("button")
+    .contains(/purchase/i)
+    .should("exist");
+});
