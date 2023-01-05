@@ -17,8 +17,7 @@ export default defineConfig({
       on("task", {
         "db:reset": () => resetDB().then(() => null),
         addBand: (newBand) => addBand(newBand).then(() => null),
-        addReservation: (newReservation) =>
-          addReservation(newReservation).then(() => null),
+        addReservation: (newReservation) => addReservation(newReservation).then(() => null),
       });
     },
   },

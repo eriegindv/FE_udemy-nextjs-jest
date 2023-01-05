@@ -64,7 +64,7 @@ export default NextAuth({
       const newSession = { ...session } as any;
       newSession.token = tokenUser.token;
       newSession.user = tokenUser;
-      return session;
+      return newSession;
     },
   },
   secret: process.env.NEXTAUTH_SECRET,
