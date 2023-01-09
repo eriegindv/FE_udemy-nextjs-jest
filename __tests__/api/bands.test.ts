@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-import { expect } from "@jest/globals";
 import { testApiHandler } from "next-test-api-route-handler";
 
 import bandsHandler from "@/pages/api/bands";
